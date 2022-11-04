@@ -1,0 +1,124 @@
+.img-box {
+    max-width: 363px;
+}
+.img-box img {
+    width: 100%;
+}
+.shadow {
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+}
+.product-title {
+    color: #444;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 30px;
+    margin: 0 0 8px;
+}
+.status-name {
+    color: #008744;
+}
+.price-box {
+    margin: 0.5rem 0;
+}
+.price {
+    color: #008744;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 30px;
+}
+/* .product-box {
+    padding: 1rem;
+} */
+.btnhuy {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    color: #212529;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.6;
+    padding: 0.375rem 0.75rem;
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    background-color: #1a1e21;
+    border-color: #191c1f;
+}
+.text-1, .text-2 {
+    display: block;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+}
+.text-1 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.text-2 {
+    font-size: 12px;
+}
+.service-detail-box {
+    background: #fff;
+    border: 1px solid #008744;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    margin-top: 1rem;
+}
+.service-item {
+    border-bottom: 1px solid #e5e5e5;
+    margin: 0 15px;
+    padding-top: 0.5rem;
+}
+.service-item > span {
+    color: #888;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: normal;
+    padding: 0;
+}
+.service-item > p {
+    color: #888;
+    font-family: Roboto, HelveticaNeue, Helvetica Neue, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 22px;
+}
+.card {
+    word-wrap: break-word;
+    background-clip: border-box;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    position: relative;
+}
+.maybe-you-like > .card > .card-header {
+    background: #008744;
+    border-bottom: 1px solid #e5e5e5;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 0;
+}
+.maybe-you-like .h2, .maybe-you-like h2 {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin: 0;
+    padding: 10px !important;
+    padding: 3px 22px;
+    text-transform: uppercase;
+}
+.list-group-item {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    color: #212529;
+    display: block;
+    padding: 0.5rem 1rem;
+    position: relative;
+    text-decoration: none;
+}

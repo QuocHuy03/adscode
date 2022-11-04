@@ -1,0 +1,48 @@
+.line-bg {
+    height: 3px;
+    margin: 0 auto 30px;
+    width: 80px;
+    background-color: #1ca823;
+}
+.card {
+    word-wrap: break-word;
+    background-clip: border-box;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    position: relative;
+}
+.card-body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+.BoxProduct-title {
+    font-weight: 700 !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+}
+.card-title {
+    margin-bottom: 0.5rem;
+}
+.button-blue {
+    border: 1px solid #0096ff;
+    border-radius: 6px;
+    color: #0096ff;
+    font-size: 15px;
+    padding: 3px 5px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.button-blue:hover {
+    background-color: #0096ff;
+    color: #fff;
+}
+svg {
+    display: inline;
+}
