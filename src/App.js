@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import { auth } from "./firebase";
 import Slider from "./components/Slider/Slider";
 import Home from "./components/Home/Home";
+import Sliders from "./components/Slider/Slider";
 
 function App() {
   const [email, setEmail] = useState("");
@@ -49,7 +50,7 @@ function App() {
         </div>
       </div>
       <div className="pb-5">
-      <Slider/>
+      <Sliders/>
       </div>
       <Footer />
     </div>

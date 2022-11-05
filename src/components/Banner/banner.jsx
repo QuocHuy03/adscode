@@ -1,10 +1,5 @@
 import Slider from "react-slick";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper/core";
-// Import Swiper styles
-import "swiper/css";
-SwiperCore.use([Autoplay, Pagination, Navigation]);
+
 const Banner = () => {
   const settings = {
     // dots: true,
@@ -14,6 +9,39 @@ const Banner = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+  };
+  const huydev = {
+    autoplay: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+    ],
   };
   return (
     <div className="container max-w-4xl mx-auto">
@@ -33,64 +61,32 @@ const Banner = () => {
         </p>
         <div className="line-bg"></div>
       </div>
-      <div className="py-10">
-        <Swiper
-          slidesPerView={4}
-          spaceBetween={10}
-          slidesPerGroup={4}
-          loop={true}
-          autoplay={true}
-          loopFillGroupWithBlank={true}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
-          breakpoints={{
-            "@0.00": {
-              slidesPerView: 2,
-              spaceBetween: 10,
-            },
-            "@0.75": {
-              slidesPerView: 2,
-              spaceBetween: 10,
-            },
-            "@1.00": {
-              slidesPerView: 3,
-              spaceBetween: 20,
-            },
-            "@1.50": {
-              slidesPerView: 4,
-              spaceBetween: 10,
-            },
-          }}
-          className="mySwiper"
-        >
-          <SwiperSlide className="transform transition duration-500 hover:scale-110">
-            <img src="https://i.imgur.com/Vl98Isz.png" alt="" />
-          </SwiperSlide>
-          <SwiperSlide className="transform transition duration-500 hover:scale-110">
-            <img src="https://i.imgur.com/BXbX7n5.png" alt="" />
-          </SwiperSlide>
-          <SwiperSlide className="transform transition duration-500 hover:scale-110">
-            <img src="https://i.imgur.com/nRjuhRj.png" alt="" />
-          </SwiperSlide>
-          <SwiperSlide className="transform transition duration-500 hover:scale-110">
-            <img src="https://i.imgur.com/540EKkz.png" alt="" />
-          </SwiperSlide>
-          <SwiperSlide className="transform transition duration-500 hover:scale-110">
-            <img src="https://i.imgur.com/kdfaV6N.png" alt="" />
-          </SwiperSlide>
-          <SwiperSlide className="transform transition duration-500 hover:scale-110">
-            <img src="https://i.imgur.com/4aFcG2Q.png" alt="" />
-          </SwiperSlide>
-          <SwiperSlide className="transform transition duration-500 hover:scale-110">
-            <img src="https://i.imgur.com/R7iDJfj.png" alt="" />
-          </SwiperSlide>
-          <SwiperSlide className="transform transition duration-500 hover:scale-110">
-            <img src="https://i.imgur.com/540EKkz.png" alt="" />
-          </SwiperSlide>
-        </Swiper>
-      </div>
+      <Slider {...huydev}>
+        <div className="transform transition duration-500 hover:scale-110 border-0">
+          <img src="https://i.imgur.com/Vl98Isz.png" alt="" />
+        </div>
+        <div className="transform transition duration-500 hover:scale-110">
+          <img src="https://i.imgur.com/BXbX7n5.png" alt="" />
+        </div>
+        <div className="transform transition duration-500 hover:scale-110">
+          <img src="https://i.imgur.com/nRjuhRj.png" alt="" />
+        </div>
+        <div className="transform transition duration-500 hover:scale-110">
+          <img src="https://i.imgur.com/540EKkz.png" alt="" />
+        </div>
+        <div className="transform transition duration-500 hover:scale-110">
+          <img src="https://i.imgur.com/kdfaV6N.png" alt="" />
+        </div>
+        <div className="transform transition duration-500 hover:scale-110">
+          <img src="https://i.imgur.com/4aFcG2Q.png" alt="" />
+        </div>
+        <div className="transform transition duration-500 hover:scale-110">
+          <img src="https://i.imgur.com/R7iDJfj.png" alt="" />
+        </div>
+        <div className="transform transition duration-500 hover:scale-110">
+          <img src="https://i.imgur.com/540EKkz.png" alt="" />
+        </div>
+      </Slider>
     </div>
   );
 };
