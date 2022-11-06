@@ -26,7 +26,7 @@ function App() {
       else {
         setEmail("");
       }
-    console.log(emailDev);
+    // console.log(emailDev);
     })
   }, []);
 

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-  baseURL: 'v2/huyit',
+  baseURL: 'https://api-backend-murex.vercel.app/',
   headers: {
     'Content-Type': 'application/json',
   },

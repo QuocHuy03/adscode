@@ -3,6 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import { addCart, deleteCart } from "../../Redux/Action";
 import { formatPrice } from "../../utils";
+import { FaMinus } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
+import "./cart.css";
+
 // toast
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -13,12 +17,52 @@ const Cart = () => {
   const dispatch = useDispatch();
   const handleAdd = (item) => {
     dispatch(addCart(item));
+    toast.success(
+      "Đã Tăng Số Lượng Sản Phẩm",
+      {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      }
+    );
   };
+  const handleReduce = (item) => {
+    dispatch(deleteCart(item));
+    toast.error(
+      "Đã Giảm Số Lượng Sản Phẩm",
+      {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      }
+    );
+  };
+  // xóa sản phẩm
   const handleDel = (item) => {
     dispatch(deleteCart(item));
+    toast.error(
+      "Xóa Số Lượng Sản Phẩm",
+      {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      }
+    );
   };
+  
   // check out
-
   const handleCheckout = () => {
     toast.success(
       "Cảm ơn người anh em đã mua hàng. Người anh em vui lòng chú ý đơn hàng. Chúc người anh em sức khỏe <3 ",
@@ -33,8 +77,6 @@ const Cart = () => {
       }
     );
   };
-  console.log(handleCheckout);
-
   const emptyCart = () => {
     return (
       <div className="container max-w-max mx-auto my-10">
@@ -55,7 +97,7 @@ const Cart = () => {
   };
   const cartItems = (product) => {
     return (
-      <tr className="bg-white border-b-2 border-gray-200">
+      <tr className="bg-white border-b-2 border-gray-200" key={product.id}>
         <td className="px-16 py-2 flex flex-row items-center">
           <img
             className="h-20 w-25 object-cover"
@@ -75,8 +117,14 @@ const Cart = () => {
         <td className="text-center">
           <span className="font-semibold">{formatPrice(product.price)}</span>
         </td>
-        <td className="text-center">
-          <span className="font-semibold">{product.quantity}</span>
+        <td className="text-center buy-amout">
+          <button onClick={() => handleReduce(product)}>
+            <FaMinus className="icon" />
+          </button>
+          <input type="text" value={product.quantity} />
+          <button onClick={() => handleAdd(product)}>
+            <FaPlus className="icon" />
+          </button>
         </td>
 
         <td className="text-center">
@@ -84,6 +132,9 @@ const Cart = () => {
             {formatPrice(product.quantity * product.price)}
           </span>
         </td>
+
+        {/* <td>
+          {state.reduce((total,product) => total+(product.quantity * product.price),0)}</td> */}
 
         <td className="px-16 py-2">
           <span
@@ -147,25 +198,11 @@ const Cart = () => {
     );
   };
 
-  //     <button
-  //     className="btn btn-outline-dark me-4"
-  //     onClick={() => handleDel(product)}
-  //   >
-  //     <i className="fa fa-minus"></i>
-  //   </button>
-  // <button
-  //   className="btn btn-outline-dark"
-  //   onClick={() => handleAdd(product)}
-  // >
-  //   <i className="fa fa-plus"></i>
-  // </button>
-
   return (
     <div className="container max-w-max mx-auto">
       <ToastContainer />
       <div className="header-cart pb-1">
         <h1 className="text-3xl font-bold">Giỏ Hàng</h1>
-        
       </div>
       {state.length === 0 && emptyTitle()}
       <div className="overflow-x-auto">
@@ -201,17 +238,22 @@ const Cart = () => {
           <tbody className="bg-gray-200">
             {state.length !== 0 && state.map(cartItems)}
           </tbody>
-          {/* <tfoot>
-          <tr>
-              <td colspan="3" className="py-2">
+          <tfoot>
+            <tr>
+              <td colspan={3} className="py-2">
                 <font color="red">
                   (*) Mã giảm giá chỉ áp dụng cho tổng tiền của loại sản phẩm
                   được khuyến mãi!
                 </font>
               </td>
-              <td colspan="3" className="text-right">Tổng Tiền: <strong> {state.length !== 0 && state.map(priceItems)}</strong></td>
+              <td colSpan={4} className="text-right">
+                Tổng Tiền:{" "}
+                <strong>
+                  {formatPrice(state.reduce((total, product) => total + product.quantity * product.price,0))}
+                </strong>
+              </td>
             </tr>
-            </tfoot> */}
+          </tfoot>
         </table>
         {state.length === 0 && emptyCart()}
       </div>

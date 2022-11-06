@@ -1,3 +1,5 @@
+
+
 const cart = [];
 
 const addHandleCart = (state = cart, action) => {
@@ -13,7 +15,7 @@ const addHandleCart = (state = cart, action) => {
           x.id === product.id ? { ...x, quantity: x.quantity + 1 } : x
         );
       } else {
-        // Khong thi du nguyen 
+        // neeus khong thi them san pham moi
         const product = action.payload;
         return [...state, { ...product, quantity: 1 }];
         // console.log(product);

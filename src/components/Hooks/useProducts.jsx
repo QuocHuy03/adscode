@@ -1,25 +1,24 @@
-
-import { useEffect, useState } from 'react';
-import productApi from '../../Api/productApi';
-import axios from 'axios';
-
+import { useEffect, useState } from "react";
+import productApi from "../../Api/productApi";
 export default function useProduct() {
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
-// nayf em render
+
   useEffect(() => {
     (async () => {
       try {
-        const result = await productApi.getAll();
+        const huycode = {
+          _limit: 10,
+        };
+        const result = await productApi.getAll(huycode);
         console.log(result);
         setProduct(result);
-        // console.log(setProduct);
       } catch (error) {
-        console.log('Failed to fetch product', error);
+        console.log("Failed to fetch product", error);
       }
       setLoading(false);
     })();
-  }, []);
+  },[]);
 
   return { product, loading };
 }
