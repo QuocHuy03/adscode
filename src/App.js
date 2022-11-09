@@ -11,7 +11,6 @@ import { useEffect, useState } from "react";
 import { auth } from "./firebase";
 import Home from "./components/Home/Home";
 import Sliders from "./components/Slider/Slider";
-import Not404 from "./components/404";
 
 function App() {
   const [email, setEmail] = useState("");
@@ -43,7 +42,6 @@ function App() {
               <Route path="/product" element={<Product />} />
               <Route path="/signin" element={<SignIn />} />
               <Route path="/signup" element={<SignUp />} />
-              <Route path="*" element={<Not404 />} />
             </Routes>
           </div>
         </div>
