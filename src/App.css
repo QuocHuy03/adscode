@@ -24,4 +24,9 @@ body {
   .main-content { 
     margin: 15px;
    }
+   body {
+    /* display: none; */
+    
+   }
+
 }

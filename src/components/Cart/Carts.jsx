@@ -199,7 +199,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="container max-w-max mx-auto">
+    <div className="container max-w-max mx-auto pt-20 sm:pt-3">
       <ToastContainer />
       <div className="header-cart pb-1">
         <h1 className="text-3xl font-bold">Giỏ Hàng</h1>
