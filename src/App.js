@@ -1,7 +1,5 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Banner from "./components/Banner/banner";
-// import { CartContext } from "./Contexts/CartContext";
 import Navbar from "./components/Navbar/Navbar";
 import Product from "./components/Product/Product";
 import DetailProduct from "./components/Product/DetailProduct";
@@ -11,7 +9,6 @@ import SignUp from "./components/Auth/Components/SignUp";
 import Footer from "./components/Footer/Footer";
 import { useEffect, useState } from "react";
 import { auth } from "./firebase";
-import Slider from "./components/Slider/Slider";
 import Home from "./components/Home/Home";
 import Sliders from "./components/Slider/Slider";
 import Not404 from "./components/404";
